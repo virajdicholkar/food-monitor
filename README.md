@@ -1,6 +1,6 @@
-# FoodMonitor
+# Food Monitor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+The application to monitor your food consumption.
 
 ## Development server
 
