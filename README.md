@@ -20,7 +20,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running unit tests with code coverage
 
-Run `npm run test:coverage` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test:coverage` to execute the unit tests with code coverage via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
