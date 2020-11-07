@@ -1,35 +1,35 @@
 <div class="container h-100 d-flex justify-content-center align-items-center">
     <div class="card p-0 food-monitor-card">
         <div class="card-body p-3">
-            <h5 class="card-title mb-0 text-center">Food Monitor</h5>
-            <p class="card-text text-center">Limit your food, live healthy.</p>
+            <h5 id="food-monitor-header" class="card-title mb-0 text-center">Food Monitor</h5>
+            <p id="food-monitor-sub-header" class="card-text text-center">Limit your food, live healthy.</p>
             <div class="form-group">
-                <div class="alert alert-success d-flex justify-content-between" *ngIf="enjoyFood" role="alert">
+                <div id="enjoy-alert" class="alert alert-success d-flex justify-content-between" *ngIf="enjoyFood" role="alert">
                     <p class="m-0">Hooray! You can enjoy your food.</p>
-                    <button type="button" class="close alert-action" (click)="initErrors()">
+                    <button id='remove-enjoy-alert' type="button" class="close alert-action" (click)="initAlertVariables()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="alert alert-warning d-flex justify-content-between" *ngIf="careFull" role="alert">
+                <div id="warning-alert" class="alert alert-warning d-flex justify-content-between" *ngIf="careFull" role="alert">
                     <p class="m-0">Hey, Be carefull! Having more than this can affect your health.</p>
-                    <button type="button" class="close alert-action" (click)="initErrors()">
+                    <button id='remove-carefull-alert' type="button" class="close alert-action" (click)="initAlertVariables()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="alert alert-danger d-flex justify-content-between" *ngIf="tooMuch" role="alert">
+                <div id="excess-food-alert" class="alert alert-danger d-flex justify-content-between" *ngIf="tooMuch" role="alert">
                     <p class="m-0">Oops! You are having too much food!</p>
-                    <button type="button" class="close alert-action" (click)="initErrors()">
+                    <button id='remove-excess-alert' type="button" class="close alert-action" (click)="initAlertVariables()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <label for="food-list">Enter your food list</label>
-                <textarea name="foodList" [(ngModel)]='foodList' class="form-control" id="food-list" rows="1"
+                <textarea id="food-list" name="foodList" [(ngModel)]='foodList' class="form-control" id="food-list" rows="1"
                     placeholder="Burger, Pizza, Sandwich"></textarea>
                 <small id="food-list-help" class="form-text text-muted">Please enter comma separated food
                     list</small>
             </div>
 
-            <button [disabled]='isFoodListInvalid()' (click)='checkIfTooMuchFood()' class="btn btn-primary btn-block">
+            <button id="check-if-too-much-btn" [disabled]='isFoodListInvalid()' (click)='checkIfTooMuchFood()' class="btn btn-primary btn-block">
                 Check If Too Much
             </button>
         </div>

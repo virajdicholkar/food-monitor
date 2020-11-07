@@ -29,9 +29,8 @@ export class FoodMonitorComponent implements OnInit {
   }
 
   checkIfTooMuchFood() {
-    this.initErrors();
+    this.initAlertVariables();
     if (!this.foodList.length) {
-      console.log('Empty food list')
       return;
     }
     const foodArray = this.foodList.split(',');
@@ -39,19 +38,16 @@ export class FoodMonitorComponent implements OnInit {
     const sanitizedFoodArrayLength = sanitizedFoodArray.length;
 
     if (sanitizedFoodArrayLength <= 3) {
-      console.log('Enjoy!');
       this.enjoyFood = true;
     } else if (sanitizedFoodArrayLength === 4) {
-      console.log('Careful!');
       this.careFull = true;
     } else {
-      console.log('Too Much!')
       this.tooMuch = true;
     }
 
   }
 
-  initErrors() {
+  initAlertVariables() {
     this.enjoyFood = false;
     this.careFull = false;
     this.tooMuch = false;
